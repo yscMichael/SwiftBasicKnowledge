@@ -12,6 +12,7 @@ class HomeListController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "首页"
         print("我是首页")
     }
 }

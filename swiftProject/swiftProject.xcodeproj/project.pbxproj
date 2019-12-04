@@ -21,6 +21,7 @@
 		11D76DA92397483400212BDC /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D76DA72397483400212BDC /* LoginController.xib */; };
 		11D76DAC23976E3F00212BDC /* SwiftHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D76DAB23976E3F00212BDC /* SwiftHeader.swift */; };
 		11D76DEE23977F8D00212BDC /* SPCPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D76DED23977F8D00212BDC /* SPCPerson.m */; };
+		11D76DF42397CE5D00212BDC /* SPCNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D76DF32397CE5D00212BDC /* SPCNetWorkManager.m */; };
 		40DCE0BCA8E52804D6EEDD73 /* Pods_swiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26886D80338E308CB6B7135 /* Pods_swiftProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,8 @@
 		11D76DAF23977E3500212BDC /* swiftProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swiftProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		11D76DEC23977F8D00212BDC /* SPCPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCPerson.h; sourceTree = "<group>"; };
 		11D76DED23977F8D00212BDC /* SPCPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCPerson.m; sourceTree = "<group>"; };
+		11D76DF22397CE5D00212BDC /* SPCNetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCNetWorkManager.h; sourceTree = "<group>"; };
+		11D76DF32397CE5D00212BDC /* SPCNetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCNetWorkManager.m; sourceTree = "<group>"; };
 		D26886D80338E308CB6B7135 /* Pods_swiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8DF23271CB128B0BF137F37 /* Pods-swiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftProject.debug.xcconfig"; path = "Target Support Files/Pods-swiftProject/Pods-swiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		F4BF4B374F7EEA39203D9860 /* Pods-swiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftProject.release.xcconfig"; path = "Target Support Files/Pods-swiftProject/Pods-swiftProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 		11D1E38323973827000CB310 /* swiftProject */ = {
 			isa = PBXGroup;
 			children = (
+				11D76DF12397BFDF00212BDC /* AliNetworkTool */,
+				11D76DF02397BEE700212BDC /* SPCNetworkTool */,
 				11D76DEF239780F200212BDC /* OCFiles */,
 				11D1E3B423973D52000CB310 /* AppDelegate */,
 				11D76DA52397480800212BDC /* LoginController */,
@@ -195,6 +200,22 @@
 				11D76DED23977F8D00212BDC /* SPCPerson.m */,
 			);
 			path = OCFiles;
+			sourceTree = "<group>";
+		};
+		11D76DF02397BEE700212BDC /* SPCNetworkTool */ = {
+			isa = PBXGroup;
+			children = (
+				11D76DF22397CE5D00212BDC /* SPCNetWorkManager.h */,
+				11D76DF32397CE5D00212BDC /* SPCNetWorkManager.m */,
+			);
+			path = SPCNetworkTool;
+			sourceTree = "<group>";
+		};
+		11D76DF12397BFDF00212BDC /* AliNetworkTool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AliNetworkTool;
 			sourceTree = "<group>";
 		};
 		33382A5BAC13FD11CEE15B91 /* Pods */ = {
@@ -392,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11D76DAC23976E3F00212BDC /* SwiftHeader.swift in Sources */,
+				11D76DF42397CE5D00212BDC /* SPCNetWorkManager.m in Sources */,
 				11D76DA32397420200212BDC /* HomeListController.swift in Sources */,
 				11D1E38923973827000CB310 /* ViewController.swift in Sources */,
 				11D1E38523973827000CB310 /* AppDelegate.swift in Sources */,

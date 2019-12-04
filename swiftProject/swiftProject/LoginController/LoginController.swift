@@ -20,7 +20,7 @@ class LoginController: UIViewController {
         //初始化数据
         initData()
         //初始化View
-//        initViews()
+        initViews()
     }
 }
 
@@ -35,17 +35,27 @@ extension LoginController{
     }
     
     //初始化View
-//    private func initViews() {
-//        self.title = "登陆界面";
-//        self.jumpButton.setTitle("跳转界面", for: UIControl.State.normal)
-//        self.jumpButton.setTitleColor(UIColor.red, for: UIControl.State.normal)
-//        self.jumpButton.backgroundColor = UIColor.lightText
-//        self.view.addSubview(self.jumpButton)
-//
-//        self.jumpButton.snp.makeConstraints { (make) in
-//            make.width.equalTo(100)
-//            make.height.equalTo(50)
-//            make.center.equalTo(self.view)
-//        }
-//    }
+    private func initViews() {
+        self.title = "登陆界面";
+        self.jumpButton.setTitle("跳转界面", for: UIControl.State.normal)
+        self.jumpButton.setTitleColor(UIColor.red, for: UIControl.State.normal)
+        self.jumpButton.backgroundColor = UIColor.lightText
+        self.jumpButton.addTarget(self, action: #selector(clickJumpButton), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(self.jumpButton)
+
+        self.jumpButton.snp.makeConstraints { (make) in
+            make.width.equalTo(100)
+            make.height.equalTo(50)
+            make.center.equalTo(self.view)
+        }
+    }
+}
+
+//MARK:Event
+extension LoginController{
+    //点击跳转按钮
+    @objc func clickJumpButton(sender:UIButton){
+        print("点击跳转按钮")
+        self.navigationController?.pushViewController(HomeListController.init(), animated: true)
+    }
 }
