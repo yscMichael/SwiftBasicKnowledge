@@ -1,0 +1,13 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '9.0'
+# github 官方 pod 源
+# source 'https://github.com/CocoaPods/Specs.git'
+# 阿里云 pod 源
+# source 'https://github.com/aliyun/aliyun-specs.git'
+
+# Uncomment this line if you're using Swift
+use_frameworks!
+
+target "swiftProject" do
+pod 'SnapKit'
+end
