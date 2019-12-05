@@ -11,4 +11,5 @@ use_frameworks!
 target "swiftProject" do
 pod 'SnapKit'
 pod 'AFNetworking'
+pod 'Alamofire', '~> 4.8.2'
 end

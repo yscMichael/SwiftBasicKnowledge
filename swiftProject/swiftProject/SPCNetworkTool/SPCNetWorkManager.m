@@ -10,6 +10,8 @@
 //网络请求超时时间
 static float SPCTimeoutInterval = 30.0;
 
+#define SPCBaseUrl @"http://58.251.35.131:80"
+
 @interface SPCNetWorkManager ()
 
 @end
@@ -24,6 +26,12 @@ static float SPCTimeoutInterval = 30.0;
         manager = [[self alloc] initWithBaseURL:[NSURL URLWithString:SPCBaseUrl]];
     });
     return manager;
+}
+
+- (void)sendRequestWithParam:(NSString *)string withURL:(NSString *)url{
+    NSLog(@"stringstringstring");
+    NSLog(@"urlurlurlurlurl");
+    
 }
 
 - (instancetype)initWithBaseURL:(NSURL *)url
@@ -52,7 +60,7 @@ static float SPCTimeoutInterval = 30.0;
 - (void)startRequestWithUrl:(NSString *)url
           method:(HTTPMethod) method
           params:(NSDictionary *)params
-withSuccessBlock:(void(^)(NSDictionary *result))success
+withSuccessBlock:(void(^)(id result))success
  withFailurBlock:(void(^)(NSError *error))failure{
     //1、网络请求request
     NSString *requestURL = [NSString stringWithFormat:@"%@%@",self.baseURL,url];
@@ -66,7 +74,7 @@ withSuccessBlock:(void(^)(NSDictionary *result))success
         [self.spcRequest setHTTPBody:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
     }
     //3、进行网络请求
-    WeakSelf;
+    __weak typeof(self) weakSelf = self;
     [[self dataTaskWithRequest:self.spcRequest uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
 
     } downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
@@ -77,10 +85,14 @@ withSuccessBlock:(void(^)(NSDictionary *result))success
             NSLog(@"request.URL = %@",weakSelf.spcRequest.URL);
             NSLog(@"request.allHTTPHeaderFields = %@",weakSelf.spcRequest.allHTTPHeaderFields);
             NSLog(@"params = %@",params);
-            success(responseObject);
+            if (success) {
+                success(responseObject);
+            }
         } else {//网络请求失败
             NSLog(@"网络请求失败 = %@",error);
-            failure(error);
+            if (failure) {
+                failure(error);
+            }
         }
     }] resume];
 }

@@ -10,6 +10,6 @@
 #define swiftProject_Bridging_Header_h
 
 #import "SPCPerson.h"
-
+#import "SPCNetWorkManager.h"
 
 #endif /* swiftProject_Bridging_Header_h */

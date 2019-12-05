@@ -24,10 +24,12 @@ typedef NS_ENUM (NSInteger, HTTPMethod){
 //单例
 + (instancetype)sharedManager;
 
+- (void)sendRequestWithParam:(NSString *)string withURL:(NSString *)url;
+
 //发起业务网络请求
 - (void)startRequestWithUrl:(NSString *)url
                      method:(HTTPMethod) method
                      params:(NSDictionary *)params
-           withSuccessBlock:(void(^)(NSDictionary *result))success
+           withSuccessBlock:(void(^)(id result))success
             withFailurBlock:(void(^)(NSError *error))failure;
 @end

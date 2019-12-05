@@ -56,6 +56,27 @@ extension LoginController{
     //点击跳转按钮
     @objc func clickJumpButton(sender:UIButton){
         print("点击跳转按钮")
-        self.navigationController?.pushViewController(HomeListController.init(), animated: true)
+        //self.navigationController?.pushViewController(HomeListController.init(), animated: true)
+        
+        //测试获取验证码请求
+        //url
+        let getCodeString = "/api/skyworth-northbound/users/captcha"
+        //参数
+        let param = ["phone":"19924535784"]
+        let netTool = SPCNetWorkManager.shared()
+        //成功block
+        let successBlock = {(result : AnyObject) -> () in
+            print("成功回调")
+            print(result)
+        }
+        //失败block
+        let failureBlock = {(error : Error?) -> () in
+            print("失败回调")
+            print(error ?? "失败")
+        }
+        //正式网络请求
+        netTool?.startRequest(withUrl: getCodeString, method: HTTPMethod.post, params: param, withSuccessBlock: successBlock as? (Any?) -> Void, withFailurBlock: failureBlock)
+        
+//        netTool?.startRequest(withUrl: getCodeString, method: HTTPMethod.post, params: param, withSuccessBlock: successBlock as? (Any?) -> Void, withFailurBlock: failureBlock)
     }
 }
