@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		114C4B18239A027000C2E7F0 /* SPCSwiftNetWorkmanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C4B17239A027000C2E7F0 /* SPCSwiftNetWorkmanager.swift */; };
+		114C4B1D239A364200C2E7F0 /* SPCLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C4B1C239A364200C2E7F0 /* SPCLoginViewModel.swift */; };
+		114C4B1F239A365100C2E7F0 /* loginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C4B1E239A365100C2E7F0 /* loginModel.swift */; };
+		114C4B21239A3F4E00C2E7F0 /* BasicTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C4B20239A3F4E00C2E7F0 /* BasicTypes.swift */; };
 		11D1E38523973827000CB310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1E38423973827000CB310 /* AppDelegate.swift */; };
 		11D1E38723973827000CB310 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1E38623973827000CB310 /* SceneDelegate.swift */; };
 		11D1E38923973827000CB310 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1E38823973827000CB310 /* ViewController.swift */; };
@@ -45,6 +48,9 @@
 
 /* Begin PBXFileReference section */
 		114C4B17239A027000C2E7F0 /* SPCSwiftNetWorkmanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCSwiftNetWorkmanager.swift; sourceTree = "<group>"; };
+		114C4B1C239A364200C2E7F0 /* SPCLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCLoginViewModel.swift; sourceTree = "<group>"; };
+		114C4B1E239A365100C2E7F0 /* loginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginModel.swift; sourceTree = "<group>"; };
+		114C4B20239A3F4E00C2E7F0 /* BasicTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTypes.swift; sourceTree = "<group>"; };
 		11D1E38123973827000CB310 /* swiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D1E38423973827000CB310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D1E38623973827000CB310 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +106,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		114C4B19239A361000C2E7F0 /* Controlller */ = {
+			isa = PBXGroup;
+			children = (
+				11D76DA62397483400212BDC /* LoginController.swift */,
+				11D76DA72397483400212BDC /* LoginController.xib */,
+			);
+			path = Controlller;
+			sourceTree = "<group>";
+		};
+		114C4B1A239A361D00C2E7F0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				114C4B1C239A364200C2E7F0 /* SPCLoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		114C4B1B239A362700C2E7F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				114C4B1E239A365100C2E7F0 /* loginModel.swift */,
+				114C4B20239A3F4E00C2E7F0 /* BasicTypes.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		11D1E37823973827000CB310 = {
 			isa = PBXGroup;
 			children = (
@@ -189,8 +221,9 @@
 		11D76DA52397480800212BDC /* LoginController */ = {
 			isa = PBXGroup;
 			children = (
-				11D76DA62397483400212BDC /* LoginController.swift */,
-				11D76DA72397483400212BDC /* LoginController.xib */,
+				114C4B19239A361000C2E7F0 /* Controlller */,
+				114C4B1A239A361D00C2E7F0 /* ViewModel */,
+				114C4B1B239A362700C2E7F0 /* Model */,
 			);
 			path = LoginController;
 			sourceTree = "<group>";
@@ -417,11 +450,14 @@
 			files = (
 				11D76DAC23976E3F00212BDC /* SwiftHeader.swift in Sources */,
 				11D76DF42397CE5D00212BDC /* SPCNetWorkManager.m in Sources */,
+				114C4B21239A3F4E00C2E7F0 /* BasicTypes.swift in Sources */,
 				114C4B18239A027000C2E7F0 /* SPCSwiftNetWorkmanager.swift in Sources */,
 				11D76DA32397420200212BDC /* HomeListController.swift in Sources */,
 				11D1E38923973827000CB310 /* ViewController.swift in Sources */,
+				114C4B1D239A364200C2E7F0 /* SPCLoginViewModel.swift in Sources */,
 				11D1E38523973827000CB310 /* AppDelegate.swift in Sources */,
 				11D1E38723973827000CB310 /* SceneDelegate.swift in Sources */,
+				114C4B1F239A365100C2E7F0 /* loginModel.swift in Sources */,
 				11D76DEE23977F8D00212BDC /* SPCPerson.m in Sources */,
 				11D76DA82397483400212BDC /* LoginController.swift in Sources */,
 			);

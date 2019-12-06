@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Alamofire
+import HandyJSON
 
 class LoginController: UIViewController {
     //MARK:属性
@@ -29,7 +30,8 @@ class LoginController: UIViewController {
         initData()
         //初始化View
         initViews()
-        
+        //模型转换
+        changeModel()
     }
     
     //MARK:点击获取验证码接口
@@ -73,10 +75,10 @@ extension LoginController{
         let param = ["phone":"19924535784"]
         SPCSwiftNetWorkmanager.sharedNetworkManager.request(urlString: baseURL, methodType: RequestType.POST, parameters: param, success: { (response) in
             print("返回结果-------")
-            print(response)
+//            print(response!)
         }) { (error) in
             print("错误结果")
-            print(error)
+            print(error!)
         }
       
 //         //2、普通测试
@@ -95,26 +97,55 @@ extension LoginController{
 //             print(response)
 //        }
     }
-    //MARK:点击登陆接口
+    
+    //MARK:点击登陆接口 + 模型测试
     func clickLoginButtonEvent(button:UIButton) {
+        //封装测试
         //参数
-        let baseURL = "http://58.251.35.131:80/api/skyworth-northbound/users/skyworthdigitallogin"
+        let baseURL = "/api/skyworth-northbound/users/skyworthdigitallogin"
         let param: [String: String] = ["username":"19924535784",
                                        "password":self.codeTextField.text ?? "",
                                        "grant_type":"password",
                                        "scope":"all",
                                        "type":"account"]
-        //头部信息
-        let headers: HTTPHeaders = [
-            "Accept": "application/json",
-            "Content-Type":"application/json",
-            "Authorization":"Basic c2t5d29ydGhkaWdpdGFsOnNreXdvcnRoZGlnaXRhbF9zZWNyZXQ="
-        ]
-        //请求
-        Alamofire.request(baseURL, method: HTTPMethod.post, parameters: param, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
-            print("请求成功")
+        SPCSwiftNetWorkmanager.sharedNetworkManager.request(urlString: baseURL, methodType: RequestType.POST, parameters: param, success: { (response) in
+            print("登陆返回结果------")
             print(response)
+            print("模型转换")
+            guard let dataDict = response["data"] else{
+                return
+            }
+            let resultDict = dataDict as! Dictionary<String, Any>
+            
+            if let loginModel = loginModel.deserialize(from: resultDict) {
+                print(loginModel.access_token ?? "qqqq")
+            }
+            
+        }) { (error) in
+            print("登陆错误结果-----")
+            print(error!)
         }
+        
+//        //参数
+//        let baseURL = "http://58.251.35.131:80/api/skyworth-northbound/users/skyworthdigitallogin"
+//        let param: [String: String] = ["username":"19924535784",
+//                                       "password":self.codeTextField.text ?? "",
+//                                       "grant_type":"password",
+//                                       "scope":"all",
+//                                       "type":"account"]
+//        print("登陆接口参数：")
+//        print(param)
+//        //头部信息
+//        let headers: HTTPHeaders = [
+//            "Accept": "application/json",
+//            "Content-Type":"application/json",
+//            "Authorization":"Basic c2t5d29ydGhkaWdpdGFsOnNreXdvcnRoZGlnaXRhbF9zZWNyZXQ="
+//        ]
+//        //请求
+//        Alamofire.request(baseURL, method: HTTPMethod.post, parameters: param, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+//            print("请求成功")
+//            print(response)
+//        }
     }
 
     //MARK:点击跳转按钮
@@ -143,5 +174,28 @@ extension LoginController{
         }
         //正式网络请求
         netTool?.startRequest(withUrl: getCodeString, method: HTTPMethod.post, params: param, withSuccessBlock: successBlock as? (Any?) -> Void, withFailurBlock: failureBlock)
+    }
+}
+
+//MARK:模型转换
+extension LoginController{
+    func changeModel() {
+        let jsonString = "{\"doubleOptional\":1.1,\"stringImplicitlyUnwrapped\":\"hello\",\"int\":1}"
+        if let object = BasicTypes.deserialize(from: jsonString) {
+            print("模型转换")
+            print(object.int)
+            print(object.doubleOptional!)
+            print(object.stringImplicitlyUnwrapped ?? "")
+            print(object.testKey)
+        }
+        print("----------------")
+        let object = BasicTypes()
+        object.int = 1
+        object.doubleOptional = 1.1
+        object.stringImplicitlyUnwrapped = "hello"
+        
+        print(object.toJSON()!) // serialize to dictionary
+        print(object.toJSONString()!) // serialize to JSON string
+        print(object.toJSONString(prettyPrint: true)!) // serialize to pretty JSON string"
     }
 }

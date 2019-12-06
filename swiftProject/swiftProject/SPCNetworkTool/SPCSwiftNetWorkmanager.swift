@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import HandyJSON
 
 // 定义枚举类型
 enum RequestType : String {
@@ -39,7 +40,7 @@ class SPCSwiftNetWorkmanager: NSObject {
 
 extension SPCSwiftNetWorkmanager{
     //MARK:请求方法
-    func request(urlString: String, methodType: RequestType, parameters: [String: String], success: @escaping (_ result: [String : Any]?) -> (), failure: @escaping (_ error: String?) -> ()) -> () {
+    func request(urlString: String, methodType: RequestType, parameters: [String: String], success: @escaping (_ result: NSDictionary) -> (), failure: @escaping (_ error: String?) -> ()) -> () {
         switch methodType {
         case .GET:
             sendGetRequest(urlString: urlString, parameters: parameters, success: success, failure: failure)
@@ -53,12 +54,12 @@ extension SPCSwiftNetWorkmanager{
     }
     
     //MARK:GET方法(暂时没有用到)
-    func sendGetRequest(urlString: String, parameters: [String: String], success: @escaping (_ result: [String : Any]?) -> (), failure: @escaping (_ error: String?) -> ()) {
+    func sendGetRequest(urlString: String, parameters: [String: String], success: @escaping (_ result: NSDictionary) -> (), failure: @escaping (_ error: String?) -> ()) {
         
     }
     
     //MARK:POST方法
-    func sendPostRequest(urlString: String, parameters: [String: String], success: @escaping (_ result: [String : Any]?) -> (), failure: @escaping (_ error: String?) -> ()) {
+    func sendPostRequest(urlString: String, parameters: [String: String], success: @escaping (_ result: NSDictionary) -> (), failure: @escaping (_ error: String?) -> ()) {
         //1、请求头
         var headers: HTTPHeaders = [
             "Accept": "application/json",
@@ -76,20 +77,28 @@ extension SPCSwiftNetWorkmanager{
         //2、网络请求
         let requestString = BaseUrl + urlString
         self.alamofire?.request(requestString, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+//            if response.result.isSuccess {//请求成功
+//                success(response)
+//            }else{//请求失败
+//                failure("数据请求失败");
+//            }
+            
             print("网络请求")
             //1、判断返回结果是否为nil、不为nil就强制解包为字典
             guard let value = response.result.value else{
                 failure("数据请求失败")
                 return
             }
-            let dictionary = value as! [String: Any]
+            print("valuevaluevaluevaluevaluevalue")
+            print(value)
+            let dictionary = value as! NSDictionary
             print(dictionary)
             //2、判断code是否存在、存在就强制解包
             guard let code = dictionary["code"] else{
                 failure("数据请求失败")
                 return
             }
-            let codeString = code as! NSNumber
+            let codeString = code as! Int
             //3、判断code是否是200
             guard codeString == 200 else{
                 failure("数据请求失败")
