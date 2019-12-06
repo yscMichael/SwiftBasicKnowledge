@@ -14,21 +14,25 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - Alamofire (4.8.2)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - Alamofire (~> 4.8.2)
   - SnapKit
 
 SPEC REPOS:
-  trunk:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - Alamofire
     - SnapKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 5e0ca42537853c0faf1b5336686acca3390f4bf6
+PODFILE CHECKSUM: b8622fcfc536c4dfd913e0e9fcc5230e55e67507
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.7.5
