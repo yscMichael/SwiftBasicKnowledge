@@ -67,20 +67,33 @@ extension LoginController{
 extension LoginController{
     //MARK:点击获取验证码接口
     func clickGetCodeButtonEvent(button :UIButton) {
-         //参数
-         let baseURL = "http://58.251.35.131:80/api/skyworth-northbound/users/captcha"
-         let param = ["phone":"19924535784"]
-         //头部信息
-         let headers: HTTPHeaders = [
-             "Accept": "application/json",
-             "Content-Type":"application/json",
-             "Authorization":"Basic c2t5d29ydGhkaWdpdGFsOnNreXdvcnRoZGlnaXRhbF9zZWNyZXQ="
-         ]
-        //请求
-         Alamofire.request(baseURL, method: HTTPMethod.post, parameters: param, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
-             print("请求成功")
-             print(response)
-         }
+        //1、测试封装好的接口
+        //参数
+        let baseURL = "/api/skyworth-northbound/users/captcha"
+        let param = ["phone":"19924535784"]
+        SPCSwiftNetWorkmanager.sharedNetworkManager.request(urlString: baseURL, methodType: RequestType.POST, parameters: param, success: { (response) in
+            print("返回结果-------")
+            print(response)
+        }) { (error) in
+            print("错误结果")
+            print(error)
+        }
+      
+//         //2、普通测试
+//         //参数
+//         let baseURL = "http://58.251.35.131:80/api/skyworth-northbound/users/captcha"
+//         let param = ["phone":"19924535784"]
+//         //头部信息
+//         let headers: HTTPHeaders = [
+//             "Accept": "application/json",
+//             "Content-Type":"application/json",
+//             "Authorization":"Basic c2t5d29ydGhkaWdpdGFsOnNreXdvcnRoZGlnaXRhbF9zZWNyZXQ="
+//         ]
+//        //请求
+//         Alamofire.request(baseURL, method: HTTPMethod.post, parameters: param, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+//             print("请求成功")
+//             print(response)
+//        }
     }
     //MARK:点击登陆接口
     func clickLoginButtonEvent(button:UIButton) {

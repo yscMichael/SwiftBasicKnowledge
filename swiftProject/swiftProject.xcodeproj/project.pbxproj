@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		114C4B18239A027000C2E7F0 /* SPCSwiftNetWorkmanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C4B17239A027000C2E7F0 /* SPCSwiftNetWorkmanager.swift */; };
 		11D1E38523973827000CB310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1E38423973827000CB310 /* AppDelegate.swift */; };
 		11D1E38723973827000CB310 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1E38623973827000CB310 /* SceneDelegate.swift */; };
 		11D1E38923973827000CB310 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1E38823973827000CB310 /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		114C4B17239A027000C2E7F0 /* SPCSwiftNetWorkmanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCSwiftNetWorkmanager.swift; sourceTree = "<group>"; };
 		11D1E38123973827000CB310 /* swiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D1E38423973827000CB310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D1E38623973827000CB310 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				11D76DF22397CE5D00212BDC /* SPCNetWorkManager.h */,
 				11D76DF32397CE5D00212BDC /* SPCNetWorkManager.m */,
+				114C4B17239A027000C2E7F0 /* SPCSwiftNetWorkmanager.swift */,
 			);
 			path = SPCNetworkTool;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 			files = (
 				11D76DAC23976E3F00212BDC /* SwiftHeader.swift in Sources */,
 				11D76DF42397CE5D00212BDC /* SPCNetWorkManager.m in Sources */,
+				114C4B18239A027000C2E7F0 /* SPCSwiftNetWorkmanager.swift in Sources */,
 				11D76DA32397420200212BDC /* HomeListController.swift in Sources */,
 				11D1E38923973827000CB310 /* ViewController.swift in Sources */,
 				11D1E38523973827000CB310 /* AppDelegate.swift in Sources */,
