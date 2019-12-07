@@ -76,10 +76,10 @@ extension LoginController{
         let param = ["phone":"19924535784"]
         loginViewModel.getGetVerificationCode(parameters: param, success: { (response) in
             print("成功回调")
-            print(response ?? "response")
+            print(response)
         }) { (error) in
             print("回调")
-            print(error ?? "error")
+            print(error)
         }
         
 //        //1、测试封装好的接口

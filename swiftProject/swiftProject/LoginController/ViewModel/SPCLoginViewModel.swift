@@ -22,7 +22,7 @@ class SPCLoginViewModel: NSObject {
 
 extension SPCLoginViewModel{
     //MARK:获取验证码
-    func getGetVerificationCode(parameters: [String: String], success: @escaping (_ success: String?) -> (), failure: @escaping (_ error: String?) -> ()) {
+    func getGetVerificationCode(parameters: [String: String], success: @escaping (_ success: String) -> (), failure: @escaping (_ error: String) -> ()) {
         SPCSwiftNetWorkmanager.sharedNetworkManager.request(urlString: SPCGetVerificationCode, methodType: RequestType.POST, parameters: parameters, success: { (response) in
             //1、解析code码
             guard let code = response["code"] else{
@@ -36,7 +36,7 @@ extension SPCLoginViewModel{
                     failure("网络请求失败")
                     return
                 }
-                failure(msg as? String)
+                failure(msg as! String)
                 return;
             }
             //3、提示发送成功
@@ -47,7 +47,7 @@ extension SPCLoginViewModel{
     }
     
     //MARK:登陆
-    func loginRequest(parameters: [String: String], success: @escaping (_ model: loginModel) -> (), failure: @escaping (_ error: String?) -> ())  {
+    func loginRequest(parameters: [String: String], success: @escaping (_ model: loginModel) -> (), failure: @escaping (_ error: String) -> ())  {
         SPCSwiftNetWorkmanager.sharedNetworkManager.request(urlString: SPCLogin, methodType: RequestType.POST, parameters: parameters, success: { (response) in
             //1、解析code码
             guard let code = response["code"] else{
@@ -61,7 +61,7 @@ extension SPCLoginViewModel{
                     failure("网络请求失败")
                     return
                 }
-                failure(msg as? String)
+                failure(msg as! String)
                 return;
             }
             //3、解析data
