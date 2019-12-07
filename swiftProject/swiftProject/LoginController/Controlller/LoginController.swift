@@ -22,6 +22,8 @@ class LoginController: UIViewController {
     
     
     @IBOutlet weak var loginButton: UIButton!
+    //网络请求
+    lazy var loginViewModel:SPCLoginViewModel = SPCLoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,17 +71,28 @@ extension LoginController{
 extension LoginController{
     //MARK:点击获取验证码接口
     func clickGetCodeButtonEvent(button :UIButton) {
-        //1、测试封装好的接口
+        //测试ViewModel封装好的接口
         //参数
-        let baseURL = "/api/skyworth-northbound/users/captcha"
         let param = ["phone":"19924535784"]
-        SPCSwiftNetWorkmanager.sharedNetworkManager.request(urlString: baseURL, methodType: RequestType.POST, parameters: param, success: { (response) in
-            print("返回结果-------")
-//            print(response!)
+        loginViewModel.getGetVerificationCode(parameters: param, success: { (response) in
+            print("成功回调")
+            print(response ?? "response")
         }) { (error) in
-            print("错误结果")
-            print(error!)
+            print("回调")
+            print(error ?? "error")
         }
+        
+//        //1、测试封装好的接口
+//        //参数
+//        let baseURL = "/api/skyworth-northbound/users/captcha"
+//        let param = ["phone":"19924535784"]
+//        SPCSwiftNetWorkmanager.sharedNetworkManager.request(urlString: baseURL, methodType: RequestType.POST, parameters: param, success: { (response) in
+//            print("返回结果-------")
+////            print(response!)
+//        }) { (error) in
+//            print("错误结果")
+//            print(error!)
+//        }
       
 //         //2、普通测试
 //         //参数
@@ -100,31 +113,61 @@ extension LoginController{
     
     //MARK:点击登陆接口 + 模型测试
     func clickLoginButtonEvent(button:UIButton) {
-        //封装测试
-        //参数
-        let baseURL = "/api/skyworth-northbound/users/skyworthdigitallogin"
+        //ViewModel封装测试
         let param: [String: String] = ["username":"19924535784",
                                        "password":self.codeTextField.text ?? "",
                                        "grant_type":"password",
                                        "scope":"all",
                                        "type":"account"]
-        SPCSwiftNetWorkmanager.sharedNetworkManager.request(urlString: baseURL, methodType: RequestType.POST, parameters: param, success: { (response) in
-            print("登陆返回结果------")
-            print(response)
-            print("模型转换")
-            guard let dataDict = response["data"] else{
-                return
-            }
-            let resultDict = dataDict as! Dictionary<String, Any>
-            
-            if let loginModel = loginModel.deserialize(from: resultDict) {
-                print(loginModel.access_token ?? "qqqq")
-            }
-            
+        loginViewModel.loginRequest(parameters: param, success: { (loginModel) in
+            print("登陆接口--成功")
+            print(loginModel.access_token)
         }) { (error) in
-            print("登陆错误结果-----")
-            print(error!)
+            print("登陆失败-- 失败")
+            print(error)
         }
+        
+        
+//        //封装测试
+//        //参数
+//        let baseURL = "/api/skyworth-northbound/users/skyworthdigitallogin"
+//        let param: [String: String] = ["username":"19924535784",
+//                                       "password":self.codeTextField.text ?? "",
+//                                       "grant_type":"password",
+//                                       "scope":"all",
+//                                       "type":"account"]
+//        SPCSwiftNetWorkmanager.sharedNetworkManager.request(urlString: baseURL, methodType: RequestType.POST, parameters: param, success: { (response) in
+//            print("登陆返回结果------")
+//            print(response)
+//            print("模型转换")
+//            //取出code
+//            guard let code = response["code"] else{
+//                return;
+//            }
+//            //判断code码
+//            guard (code as! Int) == 200 else{
+//                //这里取出具体的报错
+//                return;
+//            }
+//            //判断data是否存在
+//            guard let data = response["data"] else{
+//                return;
+//            }
+//            //将data转换为Dictionary(看能够转换成功)
+//            guard let dataDict = (data as? Dictionary<String, Any>) else{
+//                return;
+//            }
+//            //将字典转模型
+//            guard let loginModel = loginModel.deserialize(from:dataDict) else{
+//                return
+//            }
+//            //字典转化成功
+//            print("字典转换成功")
+//            print(loginModel.access_token)
+//        }) { (error) in
+//            print("登陆错误结果-----")
+//            print(error!)
+//        }
         
 //        //参数
 //        let baseURL = "http://58.251.35.131:80/api/skyworth-northbound/users/skyworthdigitallogin"
