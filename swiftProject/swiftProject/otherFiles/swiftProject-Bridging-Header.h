@@ -10,6 +10,9 @@
 #define swiftProject_Bridging_Header_h
 
 #import "SPCPerson.h"
+#import "productCode.h"
+#import "UIImage+code.h"
 #import "SPCNetWorkManager.h"
+#import "MonitorViewController.h"
 
 #endif /* swiftProject_Bridging_Header_h */

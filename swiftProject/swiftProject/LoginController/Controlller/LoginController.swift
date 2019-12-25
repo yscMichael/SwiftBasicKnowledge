@@ -20,7 +20,6 @@ class LoginController: UIViewController {
     
     @IBOutlet weak var codeTextField: UITextField!
     
-    
     @IBOutlet weak var loginButton: UIButton!
     //网络请求
     lazy var loginViewModel:SPCLoginViewModel = SPCLoginViewModel()
@@ -50,6 +49,13 @@ class LoginController: UIViewController {
     @IBAction func clickJumpButton(_ sender: UIButton) {
         clickJumpButtonEvent(button: sender);
     }
+    
+    //MARK:懒加载属性
+    lazy var players: NSMutableArray = {
+      var temporaryPlayers = NSMutableArray()
+      temporaryPlayers.add("testButton")
+      return temporaryPlayers
+    }()
 }
 
 //MARK:设置UI界面

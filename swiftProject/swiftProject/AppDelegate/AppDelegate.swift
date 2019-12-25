@@ -31,18 +31,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //MARK:初始化根控制器
     func initRootController() {
+        //进入监听网络界面
+        let homeCtrl: HomeListController = HomeListController()
+        window?.rootViewController = homeCtrl
+        window?.makeKeyAndVisible()
+        
+//        let monitor: MonitorViewController = MonitorViewController()
+//        window?.rootViewController = monitor
+//        window?.makeKeyAndVisible()
+        
+        
+        
+        //测试二维码生成图片
+//        let navCtrl = UINavigationController.init(rootViewController: HomeListController())
+//        window?.rootViewController = navCtrl
+//        window?.makeKeyAndVisible()
+        
         //判断是否登陆
-        let defaults = UserDefaults.standard
-        let isLogin = defaults.bool(forKey: "isLogin")
-        if isLogin {//进入首页(要判断token是否过期)
-            let navCtrl = UINavigationController.init(rootViewController: HomeListController())
-            window?.rootViewController = navCtrl
-            window?.makeKeyAndVisible()
-        }else{//登陆界面
-            let navCtrl = UINavigationController.init(rootViewController: LoginController.init())
-            window?.rootViewController = navCtrl
-            window?.makeKeyAndVisible()
-        }
+//        let defaults = UserDefaults.standard
+//        let isLogin = defaults.bool(forKey: "isLogin")
+//        if isLogin {//进入首页(要判断token是否过期)
+//            let navCtrl = UINavigationController.init(rootViewController: HomeListController())
+//            window?.rootViewController = navCtrl
+//            window?.makeKeyAndVisible()
+//        }else{//登陆界面
+//            let navCtrl = UINavigationController.init(rootViewController: LoginController.init())
+//            window?.rootViewController = navCtrl
+//            window?.makeKeyAndVisible()
+//        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

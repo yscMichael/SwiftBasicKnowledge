@@ -11,6 +11,7 @@ import Foundation
 //引入UIKit文件
 import UIKit
 
+
 //size
 let AppWidth = UIScreen.main.bounds.width
 let AppHeight = UIScreen.main.bounds.height

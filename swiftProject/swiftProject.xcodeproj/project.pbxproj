@@ -11,6 +11,10 @@
 		114C4B1D239A364200C2E7F0 /* SPCLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C4B1C239A364200C2E7F0 /* SPCLoginViewModel.swift */; };
 		114C4B1F239A365100C2E7F0 /* loginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C4B1E239A365100C2E7F0 /* loginModel.swift */; };
 		114C4B21239A3F4E00C2E7F0 /* BasicTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C4B20239A3F4E00C2E7F0 /* BasicTypes.swift */; };
+		1168330B23A07DFE00CC52B1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1168330A23A07DFE00CC52B1 /* CoreLocation.framework */; };
+		11A9AD1E239FC94F00F66B29 /* monitorNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9AD1D239FC94F00F66B29 /* monitorNet.m */; };
+		11A9AD24239FCA0300F66B29 /* MonitorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9AD22239FCA0300F66B29 /* MonitorViewController.m */; };
+		11A9AD25239FCA0300F66B29 /* MonitorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A9AD23239FCA0300F66B29 /* MonitorViewController.xib */; };
 		11D1E38523973827000CB310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1E38423973827000CB310 /* AppDelegate.swift */; };
 		11D1E38723973827000CB310 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1E38623973827000CB310 /* SceneDelegate.swift */; };
 		11D1E38923973827000CB310 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1E38823973827000CB310 /* ViewController.swift */; };
@@ -26,6 +30,8 @@
 		11D76DAC23976E3F00212BDC /* SwiftHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D76DAB23976E3F00212BDC /* SwiftHeader.swift */; };
 		11D76DEE23977F8D00212BDC /* SPCPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D76DED23977F8D00212BDC /* SPCPerson.m */; };
 		11D76DF42397CE5D00212BDC /* SPCNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D76DF32397CE5D00212BDC /* SPCNetWorkManager.m */; };
+		11DE0D02239F54D600944619 /* productCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DE0D01239F54D600944619 /* productCode.m */; };
+		11DE0D05239F552900944619 /* UIImage+code.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DE0D04239F552900944619 /* UIImage+code.m */; };
 		40DCE0BCA8E52804D6EEDD73 /* Pods_swiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26886D80338E308CB6B7135 /* Pods_swiftProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +57,13 @@
 		114C4B1C239A364200C2E7F0 /* SPCLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCLoginViewModel.swift; sourceTree = "<group>"; };
 		114C4B1E239A365100C2E7F0 /* loginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginModel.swift; sourceTree = "<group>"; };
 		114C4B20239A3F4E00C2E7F0 /* BasicTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTypes.swift; sourceTree = "<group>"; };
+		1168330923A07A4C00CC52B1 /* swiftProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = swiftProject.entitlements; sourceTree = "<group>"; };
+		1168330A23A07DFE00CC52B1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		11A9AD1C239FC94F00F66B29 /* monitorNet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = monitorNet.h; sourceTree = "<group>"; };
+		11A9AD1D239FC94F00F66B29 /* monitorNet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = monitorNet.m; sourceTree = "<group>"; };
+		11A9AD21239FCA0300F66B29 /* MonitorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorViewController.h; sourceTree = "<group>"; };
+		11A9AD22239FCA0300F66B29 /* MonitorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorViewController.m; sourceTree = "<group>"; };
+		11A9AD23239FCA0300F66B29 /* MonitorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonitorViewController.xib; sourceTree = "<group>"; };
 		11D1E38123973827000CB310 /* swiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D1E38423973827000CB310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D1E38623973827000CB310 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +88,10 @@
 		11D76DED23977F8D00212BDC /* SPCPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCPerson.m; sourceTree = "<group>"; };
 		11D76DF22397CE5D00212BDC /* SPCNetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCNetWorkManager.h; sourceTree = "<group>"; };
 		11D76DF32397CE5D00212BDC /* SPCNetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCNetWorkManager.m; sourceTree = "<group>"; };
+		11DE0D00239F54D600944619 /* productCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = productCode.h; sourceTree = "<group>"; };
+		11DE0D01239F54D600944619 /* productCode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = productCode.m; sourceTree = "<group>"; };
+		11DE0D03239F552900944619 /* UIImage+code.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+code.h"; sourceTree = "<group>"; };
+		11DE0D04239F552900944619 /* UIImage+code.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+code.m"; sourceTree = "<group>"; };
 		D26886D80338E308CB6B7135 /* Pods_swiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8DF23271CB128B0BF137F37 /* Pods-swiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftProject.debug.xcconfig"; path = "Target Support Files/Pods-swiftProject/Pods-swiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		F4BF4B374F7EEA39203D9860 /* Pods-swiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftProject.release.xcconfig"; path = "Target Support Files/Pods-swiftProject/Pods-swiftProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1168330B23A07DFE00CC52B1 /* CoreLocation.framework in Frameworks */,
 				40DCE0BCA8E52804D6EEDD73 /* Pods_swiftProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +150,96 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		11A9AD13239FC60200F66B29 /* AnimationFiles */ = {
+			isa = PBXGroup;
+			children = (
+				11A9AD15239FC66500F66B29 /* CAMediaTiming */,
+				11A9AD14239FC63C00F66B29 /* CAAnimation */,
+			);
+			path = AnimationFiles;
+			sourceTree = "<group>";
+		};
+		11A9AD14239FC63C00F66B29 /* CAAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				11A9AD16239FC68700F66B29 /* CAAnimationGroup */,
+				11A9AD17239FC6C700F66B29 /* CAAPropertyAnimation */,
+				11A9AD18239FC6E500F66B29 /* CATransition */,
+			);
+			path = CAAnimation;
+			sourceTree = "<group>";
+		};
+		11A9AD15239FC66500F66B29 /* CAMediaTiming */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CAMediaTiming;
+			sourceTree = "<group>";
+		};
+		11A9AD16239FC68700F66B29 /* CAAnimationGroup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CAAnimationGroup;
+			sourceTree = "<group>";
+		};
+		11A9AD17239FC6C700F66B29 /* CAAPropertyAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				11A9AD19239FC6F700F66B29 /* CABasicAnimation */,
+				11A9AD1A239FC70300F66B29 /* CAKeyframeAniamtion */,
+			);
+			path = CAAPropertyAnimation;
+			sourceTree = "<group>";
+		};
+		11A9AD18239FC6E500F66B29 /* CATransition */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CATransition;
+			sourceTree = "<group>";
+		};
+		11A9AD19239FC6F700F66B29 /* CABasicAnimation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CABasicAnimation;
+			sourceTree = "<group>";
+		};
+		11A9AD1A239FC70300F66B29 /* CAKeyframeAniamtion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CAKeyframeAniamtion;
+			sourceTree = "<group>";
+		};
+		11A9AD1B239FC8A700F66B29 /* 监听网络信息 */ = {
+			isa = PBXGroup;
+			children = (
+				11A9AD1C239FC94F00F66B29 /* monitorNet.h */,
+				11A9AD1D239FC94F00F66B29 /* monitorNet.m */,
+			);
+			path = "监听网络信息";
+			sourceTree = "<group>";
+		};
+		11A9AD1F239FC9C200F66B29 /* 监听网络控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				11A9AD20239FC9D300F66B29 /* Controller */,
+			);
+			path = "监听网络控制器";
+			sourceTree = "<group>";
+		};
+		11A9AD20239FC9D300F66B29 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11A9AD21239FCA0300F66B29 /* MonitorViewController.h */,
+				11A9AD22239FCA0300F66B29 /* MonitorViewController.m */,
+				11A9AD23239FCA0300F66B29 /* MonitorViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		11D1E37823973827000CB310 = {
 			isa = PBXGroup;
 			children = (
@@ -157,12 +265,16 @@
 		11D1E38323973827000CB310 /* swiftProject */ = {
 			isa = PBXGroup;
 			children = (
-				11D76DF12397BFDF00212BDC /* AliNetworkTool */,
+				1168330923A07A4C00CC52B1 /* swiftProject.entitlements */,
+				11A9AD1B239FC8A700F66B29 /* 监听网络信息 */,
+				11A9AD13239FC60200F66B29 /* AnimationFiles */,
+				11DE0CFF239F4AB800944619 /* productCode */,
 				11D76DF02397BEE700212BDC /* SPCNetworkTool */,
 				11D76DEF239780F200212BDC /* OCFiles */,
 				11D1E3B423973D52000CB310 /* AppDelegate */,
 				11D76DA52397480800212BDC /* LoginController */,
 				11D76DA0239741CB00212BDC /* HomeListController */,
+				11A9AD1F239FC9C200F66B29 /* 监听网络控制器 */,
 				11D1E3B523973DB8000CB310 /* otherFiles */,
 			);
 			path = swiftProject;
@@ -247,11 +359,15 @@
 			path = SPCNetworkTool;
 			sourceTree = "<group>";
 		};
-		11D76DF12397BFDF00212BDC /* AliNetworkTool */ = {
+		11DE0CFF239F4AB800944619 /* productCode */ = {
 			isa = PBXGroup;
 			children = (
+				11DE0D00239F54D600944619 /* productCode.h */,
+				11DE0D01239F54D600944619 /* productCode.m */,
+				11DE0D03239F552900944619 /* UIImage+code.h */,
+				11DE0D04239F552900944619 /* UIImage+code.m */,
 			);
-			path = AliNetworkTool;
+			path = productCode;
 			sourceTree = "<group>";
 		};
 		33382A5BAC13FD11CEE15B91 /* Pods */ = {
@@ -266,6 +382,7 @@
 		EC0B7364896D96AC46D9E7AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1168330A23A07DFE00CC52B1 /* CoreLocation.framework */,
 				D26886D80338E308CB6B7135 /* Pods_swiftProject.framework */,
 			);
 			name = Frameworks;
@@ -380,6 +497,7 @@
 				11D76DA42397420200212BDC /* HomeListController.xib in Resources */,
 				11D1E39123973828000CB310 /* LaunchScreen.storyboard in Resources */,
 				11D1E38E23973828000CB310 /* Assets.xcassets in Resources */,
+				11A9AD25239FCA0300F66B29 /* MonitorViewController.xib in Resources */,
 				11D76DA92397483400212BDC /* LoginController.xib in Resources */,
 				11D1E38C23973827000CB310 /* Main.storyboard in Resources */,
 			);
@@ -456,9 +574,13 @@
 				11D1E38923973827000CB310 /* ViewController.swift in Sources */,
 				114C4B1D239A364200C2E7F0 /* SPCLoginViewModel.swift in Sources */,
 				11D1E38523973827000CB310 /* AppDelegate.swift in Sources */,
+				11DE0D05239F552900944619 /* UIImage+code.m in Sources */,
+				11A9AD24239FCA0300F66B29 /* MonitorViewController.m in Sources */,
 				11D1E38723973827000CB310 /* SceneDelegate.swift in Sources */,
+				11A9AD1E239FC94F00F66B29 /* monitorNet.m in Sources */,
 				114C4B1F239A365100C2E7F0 /* loginModel.swift in Sources */,
 				11D76DEE23977F8D00212BDC /* SPCPerson.m in Sources */,
+				11DE0D02239F54D600944619 /* productCode.m in Sources */,
 				11D76DA82397483400212BDC /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,7 +755,9 @@
 			baseConfigurationReference = E8DF23271CB128B0BF137F37 /* Pods-swiftProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = swiftProject/swiftProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JF826FYE3W;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = swiftProject/otherFiles/Info.plist;
@@ -641,7 +765,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chuangwei.swiftProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skyworthdigital.picamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/swiftProject/otherFiles/swiftProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -654,7 +778,9 @@
 			baseConfigurationReference = F4BF4B374F7EEA39203D9860 /* Pods-swiftProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = swiftProject/swiftProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JF826FYE3W;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = swiftProject/otherFiles/Info.plist;
@@ -662,7 +788,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chuangwei.swiftProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skyworthdigital.picamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/swiftProject/otherFiles/swiftProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
